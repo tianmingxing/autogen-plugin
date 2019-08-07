@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.tianmingxing.autogen-plugin</id>
+    <name>autogen</name>
+    <vendor email="mx.tian@qq.com" url="https://tianmingxing.com">autogen</vendor>
+
+    <description><![CDATA[
+    帮助开发者基于数据库表结构生成样式代码，比如DAO、Mapper和Service等。
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>功能特性</h3>
+    <ul>
+      <li>spring boot项目基础框架代码生成</li>
+      <li>spring shell项目基础框架代码生成</li>
+    </ul>
+    ]]></change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="GenBaseFrameworkAction" class="com.tianmingxing.autogen.action.GenBaseFrameworkAction"
+                popup="true" text="生成基本框架">
+        </action>
+
+        <group id="AutoGenMenu" popup="true" text="自动生成">
+            <reference ref="GenBaseFrameworkAction"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </group>
+    </actions>
+</idea-plugin>
