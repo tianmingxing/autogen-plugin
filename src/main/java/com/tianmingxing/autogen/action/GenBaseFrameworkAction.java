@@ -16,4 +16,5 @@ public class GenBaseFrameworkAction extends AnAction {
         DialogWrapper dialog = new GenBaseFrameworkDialog(e.getProject());
         dialog.show();
     }
+
 }
