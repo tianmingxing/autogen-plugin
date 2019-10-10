@@ -1,7 +1,6 @@
 package com.tianmingxing.autogen.parse;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -51,14 +50,17 @@ public class ParseUtil {
                             continue;
                         }
 
-                        if (segments[j].startsWith("bigint") || segments[j].startsWith("int")) {
-                            field.setType(Integer.class);
+                        if (segments[j].startsWith("bigint")) {
+                            field.setType("Long");
+                            continue;
+                        } else if (segments[j].startsWith("int")) {
+                            field.setType("Integer");
                             continue;
                         } else if (segments[j].startsWith("varchar")) {
-                            field.setType(String.class);
+                            field.setType("String");
                             continue;
                         } else if (segments[j].startsWith("datetime") || segments[j].startsWith("timestamp")) {
-                            field.setType(Date.class);
+                            field.setType("Date");
                             continue;
                         }
 

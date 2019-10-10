@@ -14,9 +14,9 @@ public class TableSchemaDto {
     private String primaryKeyField;
     private List<Field> fields;
 
-    static class Field {
+    public static class Field {
         private String name;
-        private Class<?> type;
+        private String type;
         private String desc;
         private Boolean isNull;
         private String defaultValue;
@@ -40,11 +40,11 @@ public class TableSchemaDto {
             this.defaultValue = defaultValue;
         }
 
-        public Class<?> getType() {
+        public String getType() {
             return type;
         }
 
-        public void setType(Class<?> type) {
+        public void setType(String type) {
             this.type = type;
         }
 

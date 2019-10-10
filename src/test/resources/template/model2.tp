@@ -1,0 +1,14 @@
+package [(${packageName})];
+
+/**
+ * [(${tableName})]表结构模型
+ *
+ * @author [(${author})] <[(${email})]>
+ * @date [(${date})]
+ */
+public class [[${className}]]Do {
+
+    [# th:each="field : ${fields}" ]
+    private [(${field.type})] [(${field.name})];
+    [/]
+}

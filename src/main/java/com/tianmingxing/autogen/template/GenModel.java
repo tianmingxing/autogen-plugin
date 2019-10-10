@@ -2,6 +2,9 @@ package com.tianmingxing.autogen.template;
 
 import com.tianmingxing.autogen.parse.TableSchemaDto;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 生成Model类
  *
@@ -11,10 +14,10 @@ import com.tianmingxing.autogen.parse.TableSchemaDto;
 public class GenModel {
 
     /**
-     *
      * @return 最终要写入文件中的完整内容
      */
     public static String load(TableSchemaDto tableSchemaDto) {
-        return "public class " + tableSchemaDto.getTableName();
+        Map<String, Object> variables = new HashMap<>();
+        return TemplateEngineUtil.process("template/model", variables);
     }
 }

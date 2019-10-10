@@ -1,0 +1,12 @@
+package com.tianmingxing.autogen.parse;
+
+/**
+ * [#  /]表结构模型
+ *
+ * @author tianmingxing <mx.tian@qq.com>
+ * @date 2019-10-09
+ */
+public class TableSchemaDto {
+
+    private String tableName;
+}
