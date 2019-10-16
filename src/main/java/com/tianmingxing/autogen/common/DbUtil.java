@@ -1,5 +1,7 @@
 package com.tianmingxing.autogen.common;
 
+import com.tianmingxing.autogen.service.DataSourceDTO;
+
 import java.sql.*;
 
 /**
@@ -10,7 +12,7 @@ import java.sql.*;
  */
 public class DbUtil {
 
-    private static final String DB_URL = "jdbc:mysql://erp-g2.test.pagoda.com.cn:10030/ms-goods?useUnicode=true&characterEncoding=UTF-8";
+    private static final String DB_URL = "jdbc:mysql://%s?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&serverTimezone=Asia/Shanghai";
 
     private DbUtil() {
     }
@@ -20,11 +22,11 @@ public class DbUtil {
      *
      * @return
      */
-    public static Connection getConn() {
+    public static Connection getConn(DataSourceDTO dataSourceDTO) {
         Connection conn = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection(DB_URL, "root", "pagoda@test2018");
+            conn = DriverManager.getConnection(String.format(DB_URL, dataSourceDTO.getUrl()), dataSourceDTO.getUsername(), dataSourceDTO.getPassword());
             conn.setAutoCommit(true);
         } catch (SQLException | ClassNotFoundException e) {
             System.err.println("连接DB出错");
@@ -33,8 +35,8 @@ public class DbUtil {
         return conn;
     }
 
-    public static String getTableSchema(String tableName) {
-        return getTableSchema(getConn(), tableName);
+    public static String getTableSchema(DataSourceDTO dataSourceDTO, String tableName) {
+        return getTableSchema(getConn(dataSourceDTO), tableName);
     }
 
     public static String getTableSchema(Connection conn, String tableName) {
