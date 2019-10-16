@@ -10,7 +10,7 @@ import java.sql.*;
  */
 public class DbUtil {
 
-    private static final String DB_URL = "jdbc:mysql://erp-g2.test.pagoda.com.cn:10030/asura-goods?useUnicode=true&characterEncoding=UTF-8";
+    private static final String DB_URL = "jdbc:mysql://erp-g2.test.pagoda.com.cn:10030/ms-goods?useUnicode=true&characterEncoding=UTF-8";
 
     private DbUtil() {
     }

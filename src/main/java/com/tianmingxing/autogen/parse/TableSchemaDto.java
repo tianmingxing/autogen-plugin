@@ -1,5 +1,7 @@
 package com.tianmingxing.autogen.parse;
 
+import com.tianmingxing.autogen.common.FieldUtil;
+
 import java.util.List;
 
 /**
@@ -11,11 +13,15 @@ import java.util.List;
 public class TableSchemaDto {
 
     private String tableName;
+    private String className;
     private String primaryKeyField;
     private List<Field> fields;
 
     public static class Field {
         private String name;
+        private String variableName;
+        private String setterName;
+        private String getterName;
         private String type;
         private String desc;
         private Boolean isNull;
@@ -25,11 +31,38 @@ public class TableSchemaDto {
         public String toString() {
             return "Field{" +
                     "name='" + name + '\'' +
-                    ", type=" + type +
+                    ", variableName='" + variableName + '\'' +
+                    ", setterName='" + setterName + '\'' +
+                    ", getterName='" + getterName + '\'' +
+                    ", type='" + type + '\'' +
                     ", desc='" + desc + '\'' +
                     ", isNull=" + isNull +
                     ", defaultValue='" + defaultValue + '\'' +
                     '}';
+        }
+
+        public String getVariableName() {
+            return variableName;
+        }
+
+        public void setVariableName(String variableName) {
+            this.variableName = variableName;
+        }
+
+        public String getSetterName() {
+            return setterName;
+        }
+
+        public void setSetterName(String setterName) {
+            this.setterName = setterName;
+        }
+
+        public String getGetterName() {
+            return getterName;
+        }
+
+        public void setGetterName(String getterName) {
+            this.getterName = getterName;
         }
 
         public String getDefaultValue() {
@@ -54,6 +87,9 @@ public class TableSchemaDto {
 
         public void setName(String name) {
             this.name = name;
+            setVariableName(FieldUtil.parseVariableName(name));
+            setSetterName(FieldUtil.parseSetterName(name));
+            setGetterName(FieldUtil.parseGetterName(name));
         }
 
         public String getDesc() {
@@ -74,12 +110,21 @@ public class TableSchemaDto {
 
     }
 
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
     public String getTableName() {
         return tableName;
     }
 
     public void setTableName(String tableName) {
         this.tableName = tableName;
+        setClassName(FieldUtil.parseClassName(tableName));
     }
 
     public String getPrimaryKeyField() {
@@ -102,6 +147,7 @@ public class TableSchemaDto {
     public String toString() {
         return "TableSchemaDto{" +
                 "tableName='" + tableName + '\'' +
+                ", className='" + className + '\'' +
                 ", primaryKeyField='" + primaryKeyField + '\'' +
                 ", fields=" + fields +
                 '}';

@@ -1,0 +1,3 @@
+[(${objectTypeName})] dictionaryDO3 = new [(${objectTypeName})]();
+dictionaryDO3.setIndexId("100101");
+dictionaryDO3.setParentIndexId("100");
