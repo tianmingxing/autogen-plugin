@@ -1,3 +1,4 @@
-[(${objectTypeName})] dictionaryDO3 = new [(${objectTypeName})]();
-dictionaryDO3.setIndexId("100101");
-dictionaryDO3.setParentIndexId("100");
+[(${objectTypeName})] [(${objectVariableName})] = new [(${objectTypeName})]();
+[# th:each="field : ${fields}" ]
+[(${objectVariableName})].[(${field.setterName})]();
+[/]

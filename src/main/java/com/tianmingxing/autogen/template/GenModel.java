@@ -1,6 +1,6 @@
 package com.tianmingxing.autogen.template;
 
-import com.tianmingxing.autogen.parse.TableSchemaDto;
+import com.tianmingxing.autogen.parse.TableSchemaDTO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ public class GenModel {
     /**
      * @return 最终要写入文件中的完整内容
      */
-    public static String load(TableSchemaDto tableSchemaDto) {
+    public static String load(TableSchemaDTO tableSchemaDto) {
         Map<String, Object> variables = new HashMap<>();
         return TemplateEngineUtil.process("template/model", variables);
     }

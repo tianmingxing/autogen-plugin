@@ -19,14 +19,14 @@ public class ParseUtil {
     private ParseUtil() {
     }
 
-    public static TableSchemaDto parse(String tableSchemaStr) {
-        TableSchemaDto tableSchemaDto = new TableSchemaDto();
+    public static TableSchemaDTO parse(String tableSchemaStr) {
+        TableSchemaDTO tableSchemaDto = new TableSchemaDTO();
         if (Objects.isNull(tableSchemaStr)) {
             return tableSchemaDto;
         }
 
         String[] lines = tableSchemaStr.split("\n");
-        List<TableSchemaDto.Field> fields = new ArrayList<>(lines.length - 2);
+        List<TableSchemaDTO.Field> fields = new ArrayList<>(lines.length - 2);
         for (int i = 0; i < lines.length; i++) {
             String line = lines[i].trim();
             if (i == 0) {
@@ -41,7 +41,7 @@ public class ParseUtil {
             } else {
                 if (line.startsWith("`")) {
                     //字段行，按照字段来进行解析
-                    TableSchemaDto.Field field = new TableSchemaDto.Field();
+                    TableSchemaDTO.Field field = new TableSchemaDTO.Field();
 
                     String[] segments = line.split(" ");
                     for (int j = 0; j < segments.length; j++) {

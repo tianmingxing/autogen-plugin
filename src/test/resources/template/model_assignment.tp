@@ -1,4 +1,0 @@
-[(${objectTypeName})] [(${objectVariableName})] = new [(${objectTypeName})]();
-[# th:each="field : ${fields}" ]
-[(${objectVariableName})].[(${field.setterName})]();
-[/]

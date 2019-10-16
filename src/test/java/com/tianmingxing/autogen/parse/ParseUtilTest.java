@@ -7,7 +7,7 @@ public class ParseUtilTest {
 
     @Test
     public void parse() {
-        TableSchemaDto tableSchemaDto = ParseUtil.parse(DbUtil.getTableSchema("goods"));
+        TableSchemaDTO tableSchemaDto = ParseUtil.parse(DbUtil.getTableSchema("goods"));
         System.out.println(tableSchemaDto);
     }
 }

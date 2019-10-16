@@ -1,6 +1,6 @@
 package com.tianmingxing.autogen.template;
 
-import com.tianmingxing.autogen.parse.TableSchemaDto;
+import com.tianmingxing.autogen.parse.TableSchemaDTO;
 import org.junit.Assert;
 import org.junit.Test;
 import org.thymeleaf.context.Context;
@@ -31,10 +31,10 @@ public class TemplateEngineUtilTest {
         variables.put("author", "tianmingxing");
         variables.put("email", "mx.tian@qq.com");
         variables.put("date", LocalDate.now());
-        TableSchemaDto.Field f1 = new TableSchemaDto.Field();
+        TableSchemaDTO.Field f1 = new TableSchemaDTO.Field();
         f1.setName("id");
         f1.setType("Integer");
-        TableSchemaDto.Field f2 = new TableSchemaDto.Field();
+        TableSchemaDTO.Field f2 = new TableSchemaDTO.Field();
         f2.setName("name");
         variables.put("fields", Arrays.asList(f1, f2));
         String result = TemplateEngineUtil.process("template/model2", variables);

@@ -1,7 +1,7 @@
 package com.tianmingxing.autogen.template;
 
 import com.tianmingxing.autogen.common.FieldUtil;
-import com.tianmingxing.autogen.parse.TableSchemaDto;
+import com.tianmingxing.autogen.parse.TableSchemaDTO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,8 +12,8 @@ import java.util.Map;
  */
 public class GenModelAssignment {
 
-    public static String load(TableSchemaDto tableSchemaDto) {
-        Map<String, Object> variables = new HashMap<>();
+    public static String load(TableSchemaDTO tableSchemaDto) {
+        Map<String, Object> variables = new HashMap<>(3,1);
         //获取对象类型名
         variables.put("objectTypeName", tableSchemaDto.getClassName());
         //获取对象变量名

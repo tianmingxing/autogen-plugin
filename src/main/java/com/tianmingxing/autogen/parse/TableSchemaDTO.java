@@ -10,7 +10,7 @@ import java.util.List;
  * @author tianmingxing <mx.tian@qq.com>
  * @date 2019-10-09
  */
-public class TableSchemaDto {
+public class TableSchemaDTO {
 
     private String tableName;
     private String className;

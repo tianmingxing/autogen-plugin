@@ -3,7 +3,7 @@ package com.tianmingxing.autogen.service;
 import com.tianmingxing.autogen.common.DbUtil;
 import com.tianmingxing.autogen.common.FileUtil;
 import com.tianmingxing.autogen.parse.ParseUtil;
-import com.tianmingxing.autogen.parse.TableSchemaDto;
+import com.tianmingxing.autogen.parse.TableSchemaDTO;
 import com.tianmingxing.autogen.template.GenModel;
 
 /**
@@ -18,7 +18,7 @@ public class GenService {
     }
 
     public static void gen(String tableName) {
-        TableSchemaDto tableSchemaDto = ParseUtil.parse(DbUtil.getTableSchema(tableName));
+        TableSchemaDTO tableSchemaDto = ParseUtil.parse(DbUtil.getTableSchema(tableName));
         String fileContent = GenModel.load(tableSchemaDto);
         FileUtil.write(fileContent, "D:\\test.txt");
     }
