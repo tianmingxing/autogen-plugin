@@ -14,7 +14,7 @@ public enum TemplateTypeEnum {
     OBJECT_ASSIGNMENT(0),
     MODEL(1);
 
-    private int value;
+    private final int value;
 
     TemplateTypeEnum(int value) {
         this.value = value;

@@ -16,9 +16,9 @@ public enum OutputTypeEnum {
      * 控制台
      */
     CONSOLE(1);
-    private int value;
+    private final int value;
 
-    OutputTypeEnum(int value) {
+    private OutputTypeEnum(int value) {
         this.value = value;
     }
 
