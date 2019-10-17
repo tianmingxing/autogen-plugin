@@ -16,12 +16,13 @@ public class ModelTemplate implements Template {
 
     @Override
     public String render(TableSchemaDTO tableSchemaDTO, String packageName) {
-        Map<String, Object> variables = new HashMap<>(5, 1);
+        Map<String, Object> variables = new HashMap<>(6, 1);
         variables.put("packageName", packageName);
         variables.put("tableName", tableSchemaDTO.getTableName());
         variables.put("className", tableSchemaDTO.getClassName());
         variables.put("date", LocalDate.now());
         variables.put("fields", tableSchemaDTO.getFields());
+        variables.put("tableDesc", tableSchemaDTO.getTableDesc());
         return TemplateEngineUtil.process("template/model", variables);
     }
 }

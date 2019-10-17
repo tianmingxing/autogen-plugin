@@ -13,6 +13,7 @@ import java.util.List;
 public class TableSchemaDTO {
 
     private String tableName;
+    private String tableDesc;
     private String className;
     private String primaryKeyField;
     private List<Field> fields;
@@ -143,10 +144,19 @@ public class TableSchemaDTO {
         this.fields = fields;
     }
 
+    public String getTableDesc() {
+        return tableDesc;
+    }
+
+    public void setTableDesc(String tableDesc) {
+        this.tableDesc = tableDesc;
+    }
+
     @Override
     public String toString() {
-        return "TableSchemaDto{" +
+        return "TableSchemaDTO{" +
                 "tableName='" + tableName + '\'' +
+                ", tableDesc='" + tableDesc + '\'' +
                 ", className='" + className + '\'' +
                 ", primaryKeyField='" + primaryKeyField + '\'' +
                 ", fields=" + fields +

@@ -37,7 +37,7 @@ public interface GeneratorBuilder {
      *
      * @param template       前的模板
      * @param tableSchemaDTO 表描述模型
-     * @param packageName 包名
+     * @param packageName    包名
      * @return 最终的文本内容
      */
     default String renderTemplate(Template template, TableSchemaDTO tableSchemaDTO, String packageName) {

@@ -37,7 +37,14 @@ public class ParseUtil {
                     tableSchemaDto.setTableName(tableNameStr);
                 }
             } else if (i == lines.length - 1) {
-                //尾行，暂时无动作
+                System.out.println("line====" + line);
+                //尾行，解析出表描述
+                String[] segments = line.split(" ");
+                for (int j = 0; j < segments.length; j++) {
+                    if (segments[j].startsWith("COMMENT=")) {
+                        tableSchemaDto.setTableDesc(segments[j].substring(9, segments[j].length() - 2));
+                    }
+                }
             } else {
                 if (line.startsWith("`")) {
                     //字段行，按照字段来进行解析

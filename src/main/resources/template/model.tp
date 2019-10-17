@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * [(${tableName})]表结构模型
+ * 表名：[(${tableName})]，[(${tableDesc})]
  *
  * @author tianmingxing <mx.tian@qq.com>
  * @date [(${date})]

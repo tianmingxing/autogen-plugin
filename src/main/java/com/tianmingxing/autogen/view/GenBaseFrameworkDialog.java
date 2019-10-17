@@ -3,7 +3,6 @@ package com.tianmingxing.autogen.view;
 import com.intellij.ide.util.PackageChooserDialog;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.tianmingxing.autogen.service.GenFacade;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -25,7 +24,6 @@ public class GenBaseFrameworkDialog extends DialogWrapper {
         this.project = project;
         init();
         setTitle("生成基本框架配置");
-
 
 
         genPath.addFocusListener(new FocusAdapter() {
