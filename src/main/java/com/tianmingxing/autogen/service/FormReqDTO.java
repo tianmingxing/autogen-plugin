@@ -16,6 +16,7 @@ public class FormReqDTO {
     private String[] tableNames;
     private TemplateTypeEnum templateType;
     private OutputDTO outputDTO;
+    private String packageName;
 
     public DataSourceDTO getDataSourceDTO() {
         return dataSourceDTO;
@@ -49,6 +50,14 @@ public class FormReqDTO {
         this.outputDTO = outputDTO;
     }
 
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
     @Override
     public String toString() {
         return "FormReqDTO{" +
@@ -56,6 +65,7 @@ public class FormReqDTO {
                 ", tableNames=" + Arrays.toString(tableNames) +
                 ", templateType=" + templateType +
                 ", outputDTO=" + outputDTO +
+                ", packageName='" + packageName + '\'' +
                 '}';
     }
 }

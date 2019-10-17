@@ -53,10 +53,22 @@ public class ParseUtil {
                         if (segments[j].startsWith("bigint")) {
                             field.setType("Long");
                             continue;
-                        } else if (segments[j].startsWith("int")) {
+                        } else if (segments[j].startsWith("int") || segments[j].startsWith("mediumint")) {
                             field.setType("Integer");
                             continue;
-                        } else if (segments[j].startsWith("varchar")) {
+                        } else if (segments[j].startsWith("tinyint")) {
+                            field.setType("Byte");
+                            continue;
+                        } else if (segments[j].startsWith("smallint")) {
+                            field.setType("Short");
+                            continue;
+                        } else if (segments[j].startsWith("double")) {
+                            field.setType("Double");
+                            continue;
+                        } else if (segments[j].startsWith("float")) {
+                            field.setType("Float");
+                            continue;
+                        } else if (segments[j].startsWith("varchar") || segments[j].startsWith("text")) {
                             field.setType("String");
                             continue;
                         } else if (segments[j].startsWith("datetime") || segments[j].startsWith("timestamp")) {

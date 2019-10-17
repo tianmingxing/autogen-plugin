@@ -10,10 +10,10 @@ import java.util.Map;
  * @author tianmingxing <mx.tian@qq.com>
  * @date 2019-10-16
  */
-public class GenObjectAssignmentTemplate implements Template {
+public class ObjectAssignmentTemplate implements Template {
 
     @Override
-    public String render(TableSchemaDTO tableSchemaDTO) {
+    public String render(TableSchemaDTO tableSchemaDTO, String packageName) {
         Map<String, Object> variables = new HashMap<>(3, 1);
         //获取对象类型名
         variables.put("objectTypeName", tableSchemaDTO.getClassName());

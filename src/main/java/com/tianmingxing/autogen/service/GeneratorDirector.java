@@ -27,9 +27,9 @@ public class GeneratorDirector {
      * @param tableNames    表名
      * @param template      要使用的模板
      */
-    public void generator(DataSourceDTO dataSourceDTO, String[] tableNames, Template template) {
+    public void generator(DataSourceDTO dataSourceDTO, String[] tableNames, Template template, String packageName) {
         TableSchemaDTO tableSchemaDTO = builder.parseTable(dataSourceDTO, tableNames);
-        String content = builder.renderTemplate(tableSchemaDTO, template);
+        String content = builder.renderTemplate(template, tableSchemaDTO, packageName);
         builder.output(content);
     }
 }

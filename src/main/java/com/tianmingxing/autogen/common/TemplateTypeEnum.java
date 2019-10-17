@@ -11,7 +11,8 @@ public enum TemplateTypeEnum {
     /**
      * 对象赋值
      */
-    OBJECT_ASSIGNMENT(0);
+    OBJECT_ASSIGNMENT(0),
+    MODEL(1);
 
     private int value;
 

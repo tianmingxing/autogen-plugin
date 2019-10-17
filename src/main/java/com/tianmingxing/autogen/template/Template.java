@@ -14,7 +14,8 @@ public interface Template {
      * 渲染模板
      *
      * @param tableSchemaDTO 表描述信息解析模型
+     * @param packageName    包名
      * @return 返回渲染好的文本内容
      */
-    public String render(TableSchemaDTO tableSchemaDTO);
+    String render(TableSchemaDTO tableSchemaDTO, String packageName);
 }

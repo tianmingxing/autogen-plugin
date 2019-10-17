@@ -35,12 +35,13 @@ public interface GeneratorBuilder {
     /**
      * 根据表描述模型和当前的模板渲染最终的文本内容
      *
-     * @param tableSchemaDTO 表描述模型
      * @param template       前的模板
+     * @param tableSchemaDTO 表描述模型
+     * @param packageName 包名
      * @return 最终的文本内容
      */
-    default String renderTemplate(TableSchemaDTO tableSchemaDTO, Template template) {
-        return template.render(tableSchemaDTO);
+    default String renderTemplate(Template template, TableSchemaDTO tableSchemaDTO, String packageName) {
+        return template.render(tableSchemaDTO, packageName);
     }
 
     /**

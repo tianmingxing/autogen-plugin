@@ -2,7 +2,8 @@ package com.tianmingxing.autogen.service;
 
 import com.tianmingxing.autogen.common.OutputTypeEnum;
 import com.tianmingxing.autogen.common.TemplateTypeEnum;
-import com.tianmingxing.autogen.template.GenObjectAssignmentTemplate;
+import com.tianmingxing.autogen.template.ModelTemplate;
+import com.tianmingxing.autogen.template.ObjectAssignmentTemplate;
 import com.tianmingxing.autogen.template.Template;
 
 /**
@@ -24,7 +25,9 @@ public class GenFacade {
     public static void gen(FormReqDTO formReqDTO) {
         Template template = null;
         if (formReqDTO.getTemplateType() == TemplateTypeEnum.OBJECT_ASSIGNMENT) {
-            template = new GenObjectAssignmentTemplate();
+            template = new ObjectAssignmentTemplate();
+        } else if (formReqDTO.getTemplateType() == TemplateTypeEnum.MODEL) {
+            template = new ModelTemplate();
         }
 
         GeneratorBuilder builder = null;
@@ -33,6 +36,6 @@ public class GenFacade {
         }
 
         GeneratorDirector director = new GeneratorDirector(builder);
-        director.generator(formReqDTO.getDataSourceDTO(), formReqDTO.getTableNames(), template);
+        director.generator(formReqDTO.getDataSourceDTO(), formReqDTO.getTableNames(), template, formReqDTO.getPackageName());
     }
 }

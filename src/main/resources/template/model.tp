@@ -1,12 +1,23 @@
-package com.tianmingxing.autogen.parse;
+package [(${packageName})];
+
+import lombok.Setter;
+import lombok.Getter;
+import lombok.ToString;
 
 /**
- * [#  /]表结构模型
+ * [(${tableName})]表结构模型
  *
  * @author tianmingxing <mx.tian@qq.com>
- * @date 2019-10-09
+ * @date [(${date})]
  */
-public class TableSchemaDto {
-
-    private String tableName;
+@Setter
+@Getter
+@ToString
+public class [(${className})]DO {
+    [# th:each="field : ${fields}" ]
+    /**
+     * [(${field.desc})]
+     */
+    private [(${field.type})] [(${field.variableName})];
+    [/]
 }
